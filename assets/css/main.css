@@ -1,0 +1,108 @@
+/* Import fonts from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=KoHo:wght@200;400;700&display=swap');
+
+/* Set up variables for colors and fonts */
+
+/* Rasmun, her kan du ændre farver og fonte. De er navngivet efter hvad de bruges til, 
+   så du ændre bare værdien. */
+:root {
+  --background: rgb(11, 13, 18);
+  --text: rgb(173, 169, 169);
+  --link-hover: rgb(128, 125, 125);
+  --button: rgb(45, 121, 184);
+
+  --main-font: 'KoHo', sans-serif;
+  --display-font: 'Bubblegum Sans', cursive;
+}
+
+/* Base styles */
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--main-font);
+}
+
+a {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover);
+  transition: color 0.25s ease;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 200;
+}
+
+/* Header  & Nav */
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 980px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+header h1 {
+  font-family: var(--display-font);
+  font-size: 2.3rem;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+}
+
+nav a {
+  font-size: 1.6rem;
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 980px) {
+  nav {
+    width: unset;
+    justify-content: end;
+  }
+}
+
+/* Main body */
+
+main {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel {
+  height: 70vh;
+  background-image: url(../images/carousel/image1.jpg);
+  background-position: center center;
+  background-size: cover;
+  color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel h1 {
+  font-size: 4rem;
+}

@@ -1,0 +1,129 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/* Reset the basic css and make it workable on older browsers */
+/* Based on https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css */
+
+/* Set box-sizing for the whole project */
+*,
+:before,
+:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Remove tre default margin on the body */
+body {
+  margin: 0;
+}
+
+/* Change to rem units for headings */
+/* Normal size, just changed from px */
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.17rem;
+}
+h4 {
+  font-size: 1rem;
+}
+h5 {
+  font-size: 0.83rem;
+}
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep the h1 margin consistant even when nested */
+h1 {
+  margin: 0.67rem 0;
+}
+
+/* Make the hr line consitant between browsers */
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Set to block display, remove the space under the element 
+   make it responsive by default, audio without controls remain hidden */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+audio:not([controls]) {
+  display: none;
+}
+
+/* Remove the unnecessary wrapping `picture`, while maintaining contents.
+   Source elements have nothing to display, so we hide them entirely */
+picture {
+  display: contents;
+}
+
+source {
+  display: none;
+}
+
+/* Maintain aspect ratio when max-width is applied */
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*  There is no good reason elements default to 300px,
+  and audio files are unlikely to come with a width attribute. */
+
+audio {
+  width: 100%;
+}
+
+/* For older browsers */
+/*======================*/
+
+/* Remove border on IE 10 and earlier */
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE10 and earlier */
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
