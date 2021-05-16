@@ -9,12 +9,13 @@
   --background: rgb(11, 13, 18);
   --text: rgb(173, 169, 169);
   --link-hover: rgb(128, 125, 125);
-  --button: rgb(45, 121, 184);
+  --border: rgb(93, 89, 89);
 
   --main-font: 'KoHo', sans-serif;
   --display-font: 'Bubblegum Sans', cursive;
 }
 
+/*----------------------------------------------------------------*/
 /* Base styles */
 
 body {
@@ -40,6 +41,7 @@ h3 {
   font-weight: 200;
 }
 
+/*----------------------------------------------------------------*/
 /* Header  & Nav */
 
 header {
@@ -84,6 +86,7 @@ nav a {
   }
 }
 
+/*----------------------------------------------------------------*/
 /* Main body */
 
 main {
@@ -91,6 +94,9 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+/*----------------------------------------------------------------*/
+/* section carousel*/
 
 .carousel {
   height: 70vh;
@@ -105,4 +111,61 @@ main {
 
 .carousel h1 {
   font-size: 4rem;
+}
+
+/*----------------------------------------------------------------*/
+/* section news */
+
+.news {
+  padding: 1em;
+}
+
+.news--grid-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+
+.news--card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+}
+
+.news--card h1 {
+  font-family: var(--main-font);
+}
+
+.news--card .card--description {
+  font-size: 1.2rem;
+}
+
+/*----------------------------------------------------------------*/
+/* footer */
+/* Copyright meddelsen kommer fra javascript, ret årstal selv, eller sig det til mig
+   så skal jeg nok ændre der */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 3px solid var(--border);
+  margin-bottom: 2em;
+}
+
+.social {
+  margin-top: 0.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social svg {
+  width: 60px;
+  fill: var(--text);
+  padding: 0 1rem;
 }
