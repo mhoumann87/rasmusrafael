@@ -18,11 +18,15 @@ document.getElementById('copy').innerHTML = copy();
 
 // Set active class in the menu on the page you are on
 
-const page = location.href;
-const menuItem = document.querySelectorAll('.navLink');
+const setActive = () => {
+  const page = location.href;
+  const menuItem = document.querySelectorAll('.navLink');
 
-for (let i = 0; i < menuItem.length; i++) {
-  if (menuItem[i].href === page) {
-    menuItem[i].className += ' active';
+  for (let i = 0; i < menuItem.length; i++) {
+    if (menuItem[i].href === page) {
+      menuItem[i].className += ' active';
+    }
   }
-}
+};
+
+setActive();

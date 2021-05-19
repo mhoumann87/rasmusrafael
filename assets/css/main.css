@@ -18,10 +18,6 @@
 /*----------------------------------------------------------------*/
 /* Base styles */
 
-html {
-  min-height: 100%;
-}
-
 body {
   background-color: var(--background);
   color: var(--text);
@@ -111,9 +107,8 @@ nav .active {
 
 main {
   grid-area: main;
-  min-height: 100%;
   max-width: 2200px;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 
 /*----------------------------------------------------------------*/
@@ -211,38 +206,52 @@ footer {
 
 .news--card .card--description {
   font-size: 1.2rem;
+
+  /*****************************************************************
+  * Production PAges                                               *
+  *****************************************************************/
 }
 
-/*****************************************************************
-  * Video Production                                             *
-  *****************************************************************/
-
-.video--header {
+.production--header {
   display: block;
   width: 100%;
 }
 
 @media screen and (min-width: 650px) {
-  .video--header {
+  .production--header {
     max-width: 75%;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .video--header {
+  .production--header {
     max-width: 50%;
   }
 }
+
+/*****************************************************************
+  * Video Production                                             *
+  ****************************************************************/
 
 .video--grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
   gap: 1rem;
-  margin: 2rem 0;
 }
 
 .video--card {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+
+/*****************************************************************
+  * Music Production                                             *
+  ****************************************************************/
+
+.music--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
 }
