@@ -230,6 +230,32 @@ footer {
 }
 
 /*****************************************************************
+  * Illustrations                                                *
+  ****************************************************************/
+
+.illustration--grid {
+  columns: 1;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .illustration--grid {
+    columns: 300px 2;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .illustration--grid {
+    columns: 300px 3;
+  }
+}
+
+.illustration--grid img {
+  margin: 0 auto 1rem auto;
+}
+
+/*****************************************************************
   * Video Production                                             *
   ****************************************************************/
 
@@ -237,6 +263,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
   gap: 1rem;
+  padding: 1rem;
 }
 
 .video--card {
@@ -254,4 +281,90 @@ footer {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
   padding: 1rem;
+}
+
+/*****************************************************************
+  * Music Production                                             *
+  ****************************************************************/
+
+.contact--header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: 'het het' 'image image' 'text text';
+  padding: 1rem;
+}
+
+@media screen and (min-width: 800px) {
+  .contact--header {
+    grid-template-areas: 'het het' 'image text';
+  }
+}
+
+.contact--header h1 {
+  grid-area: het;
+}
+
+.contact--header .img-box {
+  grid-area: image;
+  margin: 1rem auto;
+}
+
+.contact--header img {
+  border-radius: 50%;
+  max-width: 400px;
+}
+
+.contact--box {
+  padding: 1rem;
+}
+
+.about-txt {
+  grid-area: text;
+}
+
+.info--box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 800px) {
+  .info--box {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.contact--info h3 {
+  font-size: 2rem;
+}
+
+.contact--info a {
+  text-decoration: underline;
+}
+
+.contact--social {
+  display: flex;
+}
+
+.contact--social svg {
+  max-width: 4.5rem;
+  margin: 0 2rem;
+}
+
+#behance {
+  fill: #1769ff;
+}
+
+#facebook {
+  fill: #1877f2;
+}
+
+#linkedin {
+  fill: #0a66c2;
+}
+
+#instagram {
+  fill: #e4405f;
 }
