@@ -3,10 +3,11 @@
 
 /* Set up variables for colors and fonts */
 
-/* Rasmun, her kan du ændre farver og fonte. De er navngivet efter hvad de bruges til, 
+/* Rasmus, her kan du ændre farver og fonte. De er navngivet efter hvad de bruges til, 
    så du ændre bare værdien. */
 :root {
-  --background: rgb(11, 13, 18);
+  --background: #111111;
+  --background-ac: #212121;
   --text: rgb(173, 169, 169);
   --link-hover: rgb(128, 125, 125);
   --border: rgb(93, 89, 89);
@@ -148,21 +149,100 @@ footer {
   *****************************************************************/
 
 /*----------------------------------------------------------------*/
-/* section carousel*/
-
-.frontpage--carousel {
-  height: 70vh;
-  background-image: url(../images/carousel/image1.jpg);
-  background-position: center center;
-  background-size: cover;
-  color: var(--background);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Carousel */
+.slider {
+  position: relative;
+  background: #000016;
+  width: 98vw;
+  height: 75vh;
+  margin: 1.25rem auto;
+  overflow: hidden;
+  border-radius: 0.625rem;
 }
 
-.frontpage--carousel h1 {
-  font-size: 4rem;
+.slider .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(0% at 0 50%);
+}
+
+.slider .slide.active {
+  clip-path: circle(150% at 0 50%);
+  transition: 2s;
+}
+
+.slider .slide img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.slider .slide .info {
+  position: absolute;
+  color: #222;
+  background: rgba(255, 255, 255, 0.3);
+  width: 75%;
+  margin-top: 3.125rem;
+  margin-left: 3.125rem;
+  padding: 1.25rem;
+  border-radius: 0.313rem;
+  box-shadow: 0 5px 25px rgb(1 1 1 / 5%);
+}
+
+.slider .slide .info h2 {
+  font-size: 2rem;
+}
+
+.slider .slide .info p {
+  font-size: 1rem;
+}
+
+.navigation {
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  padding: 0 0.313rem;
+}
+
+.slider:hover .navigation {
+  opacity: 1;
+}
+
+.navigation svg {
+  width: 2rem;
+}
+
+.prev-btn,
+.next-btn {
+  z-index: 999;
+  cursor: pointer;
+  fill: #222;
+}
+
+.navigation-visibility {
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation-visibility .slide-icon {
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.5);
+  width: 1.12rem;
+  height: 0.625rem;
+  transform: translate(-50px);
+  margin: 0 6px;
+  border-radius: 2px;
+  box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+}
+
+.navigation-visibility .slide-icon.active {
+  background: #4285f4;
 }
 
 /*----------------------------------------------------------------*/

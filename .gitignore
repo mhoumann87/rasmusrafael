@@ -1,4 +1,8 @@
+# All media files
 *.jpg
 *.jpeg
 *.png
 *.mp3
+
+# The files in the carousel folder
+/carousel/

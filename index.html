@@ -27,8 +27,109 @@
     <!-- CSS main -->
     <main class="frontpage--main">
       <!-- CSS .carousel + javascript carousel -->
-      <section class="frontpage--carousel">
-        <h1>Todo Change to a carousel</h1>
+      <section class="slider">
+        <div class="slide active">
+          <img src="./assets/images/carousel/1.jpg" />
+          <div class="info">
+            <h2>Change in HTML</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              a voluptate hic fugit voluptatibus repellat delectus magnam
+              obcaecati ex similique quod, ducimus corporis deserunt harum quam
+              quasi, soluta molestiae possimus?
+            </p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="./assets/images/carousel/2.jpg" />
+          <div class="info">
+            <h2>Nice Photo</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum
+              placeat eveniet praesentium molestias tempore libero omnis commodi
+              cum animi recusandae reprehenderit exercitationem, aspernatur enim
+              est neque temporibus! Quidem, cum numquam.
+            </p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="./assets/images/carousel/3.jpg" />
+          <div class="info">
+            <h2>This is Fun</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum
+              placeat eveniet praesentium molestias tempore libero omnis commodi
+              cum animi recusandae reprehenderit exercitationem, aspernatur enim
+              est neque temporibus! Quidem, cum numquam.
+            </p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="./assets/images/carousel/4.jpg" />
+          <div class="info">
+            <h2>See how nice</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum
+              placeat eveniet praesentium molestias tempore libero omnis commodi
+              cum animi recusandae reprehenderit exercitationem, aspernatur enim
+              est neque temporibus! Quidem, cum numquam.
+            </p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="./assets/images/carousel/5.jpg" />
+          <div class="info">
+            <h2>The last one</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum
+              placeat eveniet praesentium molestias tempore libero omnis commodi
+              cum animi recusandae reprehenderit exercitationem, aspernatur enim
+              est neque temporibus! Quidem, cum numquam.
+            </p>
+          </div>
+        </div>
+
+        <div class="navigation">
+          <svg
+            id="left"
+            class="prev-btn"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 54 54"
+          >
+            <path
+              d="M27 0C12.112 0 0 12.112 0 27s12.112 27 27 27 27-12.112 27-27S41.888 0 27 0zm0 52C13.215 52 2 40.785 2 27S13.215 2 27 2s25 11.215 25 25-11.215 25-25 25z"
+            />
+            <path
+              d="M32.413 14.293a.999.999 0 00-1.414 0L19.501 25.791a1.711 1.711 0 000 2.418l11.498 11.498a.997.997 0 001.414 0 .999.999 0 000-1.414L21.12 27l11.293-11.293a.999.999 0 000-1.414z"
+            />
+          </svg>
+
+          <svg
+            id="right"
+            class="next-btn"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 54 54"
+          >
+            <path
+              d="M.241 30.603C2.228 45.358 15.848 55.745 30.603 53.76c14.755-1.987 25.142-15.607 23.156-30.362C51.772 8.642 38.152-1.745 23.397.24 8.642 2.228-1.745 15.848.24 30.603zm51.535-6.94c1.84 13.663-7.778 26.274-21.44 28.113-13.662 1.84-26.273-7.778-28.112-21.44-1.84-13.662 7.778-26.273 21.44-28.112 13.662-1.84 26.273 7.778 28.112 21.44z"
+            />
+            <path
+              d="M21.294 39.708a.999.999 0 001.414 0L34.206 28.21a1.711 1.711 0 000-2.418L22.708 14.294a.997.997 0 00-1.414 0 .999.999 0 000 1.414L32.587 27 21.294 38.294a.999.999 0 000 1.414z"
+            />
+          </svg>
+        </div>
+
+        <div class="navigation-visibility">
+          <div class="slide-icon active"></div>
+          <div class="slide-icon"></div>
+          <div class="slide-icon"></div>
+          <div class="slide-icon"></div>
+          <div class="slide-icon"></div>
+        </div>
       </section>
       <!--CSS .news, du kan bare fjerne denne sektion, men Google elsker
           sider der bliver opdateret jævnligt, så jeg anbefaler du viser 
