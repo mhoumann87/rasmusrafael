@@ -2,3 +2,6 @@
 *.jpeg
 *.png
 *.mp3
+
+# Carousel files
+/carousel/
