@@ -3,13 +3,14 @@
 
 /* Set up variables for colors and fonts */
 
-/* Rasmun, her kan du ændre farver og fonte. De er navngivet efter hvad de bruges til, 
+/* Rasmus, her kan du ændre farver og fonte. De er navngivet efter hvad de bruges til, 
    så du ændre bare værdien. */
 :root {
-  --background: rgb(11, 13, 18);
-  --text: rgb(173, 169, 169);
+  --background: #212121;
+  --element-background: #262828;
+  --text: rgb(209, 209, 209);
   --link-hover: rgb(128, 125, 125);
-  --border: rgb(93, 89, 89);
+  --border: #313535;
 
   --main-font: 'KoHo', sans-serif;
   --display-font: 'Bubblegum Sans', cursive;
@@ -55,8 +56,9 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--background);
+  background-color: var(--element-background);
   padding: 0.5rem 1rem 2rem 1rem;
+  border-bottom: 3px solid var(--border);
 }
 
 @media screen and (min-width: 980px) {
@@ -92,7 +94,7 @@ nav a:not(:last-child) {
 
 nav a:hover,
 nav a:focus {
-  border-bottom: 5px solid var(--link-hover);
+  text-decoration: underline;
 }
 
 nav .active {
@@ -111,7 +113,7 @@ nav .active {
 
 main {
   grid-area: main;
-  max-width: 2200px;
+  max-width: 137.5rem;
   margin: 2rem auto;
 }
 
@@ -126,7 +128,8 @@ footer {
   justify-content: center;
   align-items: center;
   border-top: 3px solid var(--border);
-  margin-bottom: 2em;
+  padding-bottom: 2em;
+  background: var(--element-background);
 }
 
 .social {
@@ -182,13 +185,13 @@ footer {
   gap: 2em;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50rem) {
   .frontpage--grid-box {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75rem) {
   .frontpage--grid-box {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -221,13 +224,13 @@ footer {
   width: 100%;
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 40.625rem) {
   .production--header {
     max-width: 75%;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75rem) {
   .production--header {
     max-width: 50%;
   }
@@ -243,15 +246,15 @@ footer {
   gap: 1rem;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 37.5rem) {
   .illustration--grid {
-    columns: 300px 2;
+    columns: 18.75rem 2;
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50rem) {
   .illustration--grid {
-    columns: 300px 3;
+    columns: 18.75rem 3;
   }
 }
 
@@ -265,7 +268,7 @@ footer {
 
 .video--grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(34.375rem, 1fr));
   gap: 1rem;
   padding: 1rem;
 }
@@ -298,7 +301,7 @@ footer {
   padding: 1rem;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50rem) {
   .contact--header {
     grid-template-areas: 'het het' 'image text';
   }
@@ -315,7 +318,7 @@ footer {
 
 .contact--header img {
   border-radius: 50%;
-  max-width: 400px;
+  max-width: 25rem;
 }
 
 .contact--box {
@@ -333,7 +336,7 @@ footer {
   align-items: center;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50rem) {
   .info--box {
     flex-direction: row;
     justify-content: space-between;
