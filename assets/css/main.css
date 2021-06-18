@@ -166,10 +166,12 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .frontpage--carousel h1 {
   font-size: 4rem;
+  margin: 0;
 }
 
 /*----------------------------------------------------------------*/
@@ -180,6 +182,7 @@ footer {
 }
 
 .frontpage--grid-box {
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2em;
@@ -205,6 +208,12 @@ footer {
   gap: 1rem;
   padding: 1rem;
   border: 1px solid var(--border);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.card--header {
+  width: 100%;
 }
 
 .news--card h1 {
@@ -376,7 +385,9 @@ footer {
   fill: #e4405f;
 }
 
-/* CSS for lightbox */
+/* CSS for lightbox 
+===================================================================*/
+
 body.lb-disable-scrolling {
   overflow: hidden;
 }
