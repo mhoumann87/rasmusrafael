@@ -16,6 +16,11 @@
   box-sizing: border-box;
 }
 
+/* Set site wide basic font-size */
+html {
+  font-size: 16px;
+}
+
 /* Remove tre default margin on the body */
 body {
   margin: 0;
