@@ -1,7 +1,10 @@
+# All media files
 *.jpg
 *.jpeg
 *.png
 *.mp3
 
-# Carousel files
+
+# The files in the carousel folder
 /carousel/
+
