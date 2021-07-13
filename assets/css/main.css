@@ -6,11 +6,12 @@
 /* Rasmus, her kan du ændre farver og fonte. De er navngivet efter hvad de bruges til, 
    så du ændre bare værdien. */
 :root {
+
   --background: #111111;
   --background-ac: #212121;
   --text: rgb(173, 169, 169);
   --link-hover: rgb(128, 125, 125);
-  --border: rgb(93, 89, 89);
+  --border: #313535;
 
   --main-font: 'KoHo', sans-serif;
   --display-font: 'Bubblegum Sans', cursive;
@@ -56,8 +57,9 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--background);
-  padding: 0 1rem;
+  background-color: var(--element-background);
+  padding: 0.5rem 1rem 2rem 1rem;
+  border-bottom: 3px solid var(--border);
 }
 
 @media screen and (min-width: 980px) {
@@ -83,13 +85,17 @@ nav {
 
 nav a {
   font-size: 1.6rem;
-  padding: 0 1rem;
+  padding-bottom: 1rem;
+  transition: all 0.25s ease;
+}
+
+nav a:not(:last-child) {
+  margin-right: 1rem;
 }
 
 nav a:hover,
 nav a:focus {
   text-decoration: underline;
-  transition: all 0.25s ease;
 }
 
 nav .active {
@@ -108,8 +114,8 @@ nav .active {
 
 main {
   grid-area: main;
-  max-width: 2200px;
-  margin: 2rem auto;
+  max-width: 137.5rem;
+  margin: 0 auto;
 }
 
 /*----------------------------------------------------------------*/
@@ -123,7 +129,8 @@ footer {
   justify-content: center;
   align-items: center;
   border-top: 3px solid var(--border);
-  margin-bottom: 2em;
+  padding-bottom: 2em;
+  background: var(--element-background);
 }
 
 .social {
@@ -243,6 +250,7 @@ footer {
 
 .navigation-visibility .slide-icon.active {
   background: #4285f4;
+
 }
 
 /*----------------------------------------------------------------*/
@@ -253,18 +261,19 @@ footer {
 }
 
 .frontpage--grid-box {
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2em;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50rem) {
   .frontpage--grid-box {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75rem) {
   .frontpage--grid-box {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -278,6 +287,12 @@ footer {
   gap: 1rem;
   padding: 1rem;
   border: 1px solid var(--border);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.card--header {
+  width: 100%;
 }
 
 .news--card h1 {
@@ -297,13 +312,13 @@ footer {
   width: 100%;
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 40.625rem) {
   .production--header {
     max-width: 75%;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75rem) {
   .production--header {
     max-width: 50%;
   }
@@ -319,15 +334,15 @@ footer {
   gap: 1rem;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 37.5rem) {
   .illustration--grid {
-    columns: 300px 2;
+    columns: 18.75rem 2;
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50rem) {
   .illustration--grid {
-    columns: 300px 3;
+    columns: 18.75rem 3;
   }
 }
 
@@ -341,7 +356,7 @@ footer {
 
 .video--grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(34.375rem, 1fr));
   gap: 1rem;
   padding: 1rem;
 }
@@ -374,7 +389,7 @@ footer {
   padding: 1rem;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50rem) {
   .contact--header {
     grid-template-areas: 'het het' 'image text';
   }
@@ -391,7 +406,7 @@ footer {
 
 .contact--header img {
   border-radius: 50%;
-  max-width: 400px;
+  max-width: 25rem;
 }
 
 .contact--box {
@@ -409,7 +424,7 @@ footer {
   align-items: center;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50rem) {
   .info--box {
     flex-direction: row;
     justify-content: space-between;
@@ -447,4 +462,214 @@ footer {
 
 #instagram {
   fill: #e4405f;
+}
+
+/*****************************************************************
+  * Light box                                                    *
+  ****************************************************************/
+
+body.lb-disable-scrolling {
+  overflow: hidden;
+}
+
+.lightboxOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  display: none;
+}
+
+.lightbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0;
+  font-weight: normal;
+  outline: none;
+}
+
+.lightbox .lb-image {
+  display: block;
+  height: auto;
+  max-width: inherit;
+  max-height: none;
+  border-radius: 3px;
+
+  /* Image border */
+  border: 4px solid white;
+}
+
+.lightbox a img {
+  border: none;
+}
+
+.lb-outerContainer {
+  position: relative;
+  *zoom: 1;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 4px;
+
+  /* Background color behind image.
+     This is visible during transitions. */
+  background-color: white;
+}
+
+.lb-outerContainer:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.lb-loader {
+  position: absolute;
+  top: 43%;
+  left: 0;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+.lb-cancel {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  background: url(../images/loading.gif) no-repeat;
+}
+
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+.lb-container > .nav {
+  left: 0;
+}
+
+.lb-nav a {
+  outline: none;
+  background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+}
+
+.lb-prev,
+.lb-next {
+  height: 100%;
+  cursor: pointer;
+  display: block;
+}
+
+.lb-nav a.lb-prev {
+  width: 34%;
+  left: 0;
+  float: left;
+  background: url(../images/prev.png) left 48% no-repeat;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+
+.lb-nav a.lb-prev:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+.lb-nav a.lb-next {
+  width: 64%;
+  right: 0;
+  float: right;
+  background: url(../images/next.png) right 48% no-repeat;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+
+.lb-nav a.lb-next:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+.lb-dataContainer {
+  margin: 0 auto;
+  padding-top: 5px;
+  *zoom: 1;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.lb-dataContainer:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.lb-data {
+  padding: 0 4px;
+  color: #ccc;
+}
+
+.lb-data .lb-details {
+  width: 85%;
+  float: left;
+  text-align: left;
+  line-height: 1.1em;
+}
+
+.lb-data .lb-caption {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+.lb-data .lb-caption a {
+  color: #4ae;
+}
+
+.lb-data .lb-number {
+  display: block;
+  clear: left;
+  padding-bottom: 1em;
+  font-size: 12px;
+  color: #999999;
+}
+
+.lb-data .lb-close {
+  display: block;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background: url(../images/close.png) top right no-repeat;
+  text-align: right;
+  outline: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.lb-data .lb-close:hover {
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
 }
