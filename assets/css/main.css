@@ -1,20 +1,20 @@
 /* Import fonts from google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=KoHo:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap');
 
 /* Set up variables for colors and fonts */
 
 /* Rasmus, her kan du ændre farver og fonte. De er navngivet efter hvad de bruges til, 
    så du ændre bare værdien. */
 :root {
-
   --background: #111111;
   --background-ac: #212121;
   --text: rgb(173, 169, 169);
   --link-hover: rgb(128, 125, 125);
   --border: #313535;
+  --headline: #ffffff;
 
-  --main-font: 'KoHo', sans-serif;
-  --display-font: 'Bubblegum Sans', cursive;
+  --main-font: 'Lexend', sans-serif;
+  --display-font: 'Lexend', sans-serif;
 }
 
 /*----------------------------------------------------------------*/
@@ -32,7 +32,6 @@ body {
 }
 
 a {
-  text-decoration: none;
   color: var(--link);
 }
 
@@ -45,11 +44,43 @@ a:focus {
 h1,
 h2,
 h3 {
-  font-weight: 200;
+  font-weight: 300;
 }
 
-/*----------------------------------------------------------------*/
-/* Header  & Nav */
+h1 {
+  color: var(--headline);
+}
+
+/*----------------------------
+* Helper Classes
+------------------------------*/
+
+/* Classes to give headings other sizes, 
+but maintaining the semantic system on the oage */
+
+/* Equal to a h1 in the header */
+.header-large {
+  font-size: 2.3rem;
+}
+
+/* Equal to h1 */
+.large {
+  font-size: 2rem;
+}
+
+/* Equal to h2 */
+.medium {
+  font-size: 1.5rem;
+}
+
+/* Equal to h3 */
+.small {
+  font-size: 1.17rem;
+}
+
+/*-----------------------------
+* Header  & Nav 
+-------------------------------*/
 
 header {
   grid-area: header;
@@ -57,7 +88,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--element-background);
+  background-color: var(--background-ac);
   padding: 0.5rem 1rem 2rem 1rem;
   border-bottom: 3px solid var(--border);
 }
@@ -84,6 +115,7 @@ nav {
 }
 
 nav a {
+  text-decoration: none;
   font-size: 1.6rem;
   padding-bottom: 1rem;
   transition: all 0.25s ease;
@@ -149,6 +181,49 @@ footer {
 
 .social svg:hover {
   fill: var(--link-hover);
+}
+
+/****************************************************************
+* Bottom media section
+****************************************************************/
+
+.bottom-section {
+  padding: 0 1rem;
+  display: grid;
+  position: relative;
+}
+
+.media,
+.media-text {
+  width: 100%;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.media video {
+  width: 100%;
+  height: auto;
+}
+
+.media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.media-text {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.media-text .text-box {
+  width: 60%;
+  text-align: center;
 }
 
 /*****************************************************************
@@ -250,7 +325,6 @@ footer {
 
 .navigation-visibility .slide-icon.active {
   background: #4285f4;
-
 }
 
 /*----------------------------------------------------------------*/
@@ -303,24 +377,48 @@ footer {
   font-size: 1.2rem;
 
   /*****************************************************************
-  * Production PAges                                               *
+  * Production Pages                                               *
   *****************************************************************/
 }
 
 .production--header {
   display: block;
   width: 100%;
+  margin: 1rem 0;
 }
 
-@media screen and (min-width: 40.625rem) {
-  .production--header {
-    max-width: 75%;
+.production--header__content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.production--header__text {
+  max-width: 60ch;
+  align-self: flex-start;
+}
+
+.production--header__text p {
+  margin: 0 0 1rem 0;
+}
+
+@media screen and (min-width: 50rem) {
+  .production--header__content {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
   }
-}
 
-@media screen and (min-width: 75rem) {
-  .production--header {
-    max-width: 50%;
+  .production--header__image {
+    flex: 0 1 auto;
+  }
+
+  .production--header__text {
+    flex: 1 0 60ch;
   }
 }
 
@@ -379,7 +477,55 @@ footer {
 }
 
 /*****************************************************************
-  * Music Production                                             *
+  * Weblog                                                       *
+  ****************************************************************/
+
+.weblog--grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1rem;
+}
+
+.weblog--post {
+  background: var(--background-ac);
+}
+
+.weblog--post__header {
+  padding: 1rem;
+}
+
+.weblog--post__header h2,
+.weblog--post__header p {
+  margin: 0 0 1rem 0;
+}
+
+.post__image {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.post__text {
+  max-width: 60ch;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 50rem) {
+  .post__image {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  .weblog--grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+/*****************************************************************
+  * Contact                                                      *
   ****************************************************************/
 
 .contact--header {
@@ -387,6 +533,7 @@ footer {
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: 'het het' 'image image' 'text text';
   padding: 1rem;
+  margin: 1rem 0;
 }
 
 @media screen and (min-width: 50rem) {
@@ -444,24 +591,35 @@ footer {
 }
 
 .contact--social svg {
-  max-width: 4.5rem;
-  margin: 0 2rem;
+  width: 2.5rem;
+  margin-left: 1.5rem;
+  transition: all 0.3s ease-in-out;
 }
 
-#behance {
-  fill: #1769ff;
+.contact--social svg:hover,
+.contact--social svg:focus,
+.contact--social svg:active {
+  transform: scale(1.1);
+}
+
+#steam {
+  fill: #ffffff;
 }
 
 #facebook {
   fill: #1877f2;
 }
 
-#linkedin {
-  fill: #0a66c2;
+#twich {
+  fill: #9146ff;
 }
 
 #instagram {
   fill: #e4405f;
+}
+
+#twitter {
+  fill: #1da1f2;
 }
 
 /*****************************************************************
