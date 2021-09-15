@@ -126,15 +126,11 @@
               <h2>New Video</h2>
             </header>
 
-            <iframe
-              width="auto"
-              height="auto"
-              src="https://www.youtube.com/embed/WdoXZf-FZyA"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+            <!-- Når du vil tilføje videoer som ligger på din egen server, brug denne metode. Teksten under source er bare som sikkerhed. Hvis du har flere versioner i forskellige formater, kan du bare tilføje ekstre source tags -->
+            <video controls>
+              <source src="./assets/video/birds.mp4" />
+              Your browser doesn't support the video tag
+            </video>
 
             <section class="card--description">
               <p>Come again soon for a video of my creative process</p>
