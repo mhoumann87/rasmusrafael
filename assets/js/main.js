@@ -15,3 +15,14 @@ const copy = () => {
 };
 
 document.getElementById('copy').innerHTML = copy();
+
+/*
+ * Åben og luk mobil menu
+ */
+
+const navToggle = document.querySelector('.nav-toggle');
+
+navToggle.addEventListener('click', () => {
+  console.log('Trykket');
+  document.querySelector('.nav').classList.toggle('nav--visible');
+});

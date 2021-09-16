@@ -15,18 +15,45 @@
     <!-- CSS header og nav  -->
 
     <header role="banner">
-      <h1>Rasmus Rafael</h1>
+      <div class="logo-box">
+        <a href="./index.html"><h1>Rasmus Rafael</h1></a>
 
+        <button class="nav-toggle" aria-label="open navigation">
+          <span class="hamburger"></span>
+        </button>
+      </div>
       <!-- Hvis du retter i menuen, så giv mig lige besked, for der er noget animation i css der også skal retter :) -->
 
-      <nav>
-        <a class="navLink active" href="./index.html">Home</a>
-        <a class="navLink" href="./illustrations.html">Illustrations</a>
-        <a class="navLink" href="./animation.html">Animation</a>
-        <a class="navLink" href="./video.html">Video</a>
-        <a class="navLink" href="./music.html">Music</a>
-        <a class="navLink" href="./weblog.html">Weblog</a>
-        <a class="navLink" href="./contact.html">Contact Info</a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link active" href="./index.html">Home</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="./illustrations.html">Illustrations</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="./animation.html">Animation</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="./video.html">Video</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="./music.html">Music</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="./weblog.html">Weblog</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="./contact.html">Contact</a>
+          </li>
+        </ul>
       </nav>
     </header>
 

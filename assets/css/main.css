@@ -84,60 +84,135 @@ but maintaining the semantic system on the oage */
 
 header {
   grid-area: header;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: var(--background-ac);
-  padding: 0.5rem 1rem 2rem 1rem;
+  padding: 1em 0.5em;
   border-bottom: 3px solid var(--border);
-}
-
-@media screen and (min-width: 980px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  position: relative;
 }
 
 header h1 {
-  font-family: var(--display-font);
   font-size: 2.3rem;
 }
 
-nav {
-  width: 100%;
+.logo-box {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  padding-bottom: 1rem;
 }
 
-nav a {
+.logo-box a {
   text-decoration: none;
-  font-size: 1.6rem;
-  padding-bottom: 1rem;
-  transition: all 0.25s ease;
 }
 
-nav a:not(:last-child) {
-  margin-right: 1rem;
+.nav-toggle {
+  cursor: pointer;
+  border: 0;
+  width: 3em;
+  height: 3em;
+  padding: 0;
+  border-radius: 50%;
+  background: #fff4;
 }
 
-nav a:hover,
-nav a:focus {
-  text-decoration: underline;
+.hamburger {
+  width: 50%;
+  position: relative;
 }
 
-nav .active {
-  text-decoration: underline;
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  margin: 0 auto;
+  height: 3px;
+  background-color: var(--headline);
 }
 
-@media screen and (min-width: 980px) {
-  nav {
-    width: unset;
-    justify-content: end;
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  width: 100%;
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(3px);
+}
+
+.nav {
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+}
+
+.nav--visible {
+  visibility: visible;
+  height: auto;
+}
+
+.nav__list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.nav__item + .nav__item {
+  margin-top: 0.75em;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-size: 1.7rem;
+}
+
+@media screen and (min-width: 1100px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header h1 {
+    font-family: var(--display-font);
+    font-size: 2rem;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav {
+    visibility: visible;
+    height: auto;
+  }
+
+  .nav__list {
+    display: flex;
+    gap: 0.25em;
+  }
+
+  .nav__item + .nav__item {
+    margin: 0;
+  }
+
+  .nav__link {
+    font-size: 1.4rem;
+    padding: 0.5em;
+    transition: 250ms;
+  }
+
+  .nav__link:hover,
+  .nav__link:focus {
+    background-color: #fff2;
+  }
+
+  .active {
+    background-color: #fff2;
+    color: var(--link-hover);
   }
 }
 
